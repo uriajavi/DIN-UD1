@@ -39,7 +39,7 @@ public class JavaFXViewImplementation extends Application implements View {
             //Get controller for graph 
             FXMLDocumentController viewController=
                     ((FXMLDocumentController)loader.getController());
-            //Set a reference in UI controller para Bussiness Logic Controllesr
+            //Set greeting to be used in JavaFX view controller
             viewController.setGreeting(greeting);
             //Create scene an set document for it
             Scene scene=new Scene(root);
