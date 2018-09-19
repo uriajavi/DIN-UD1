@@ -14,9 +14,10 @@ public class ViewFactory {
      * Get a View implementation
      * @return the View implementation
      */
-
     public static View getView(){
-        return new ViewImplementation();
+        //Uncomment to show text ui implementation
+        //return new ViewImplementation();
+        return new JavaFXViewImplementation();
     }
     
 }
