@@ -24,7 +24,7 @@ public class JavaFXViewImplementation extends Application implements View {
      * new thread for the JavaFX application and non static member state would
      * not be maintained.
      */
-    private static String greeting;
+    private String greeting;
     /**
      * Start method called after JavaFX application initialization.
      * @param stage The Stage object for the primary window.
@@ -56,8 +56,15 @@ public class JavaFXViewImplementation extends Application implements View {
      */
     @Override
     public void showGreeting(String greeting) {
-        JavaFXViewImplementation.greeting=greeting;
-        launch(new String[0]);
+        //JavaFXViewImplementation.greeting=greeting;
+        launch(greeting);
+    }
+    /**
+     * Initialization method for JavaFX app. Stores greeting.  
+     */
+    @Override
+    public void init() throws Exception{
+        this.greeting=getParameters().getRaw().get(0);
     }
     
 }
