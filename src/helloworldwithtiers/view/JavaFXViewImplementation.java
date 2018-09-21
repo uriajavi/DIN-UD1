@@ -66,5 +66,10 @@ public class JavaFXViewImplementation extends Application implements View {
     public void init() throws Exception{
         this.greeting=getParameters().getRaw().get(0);
     }
-    
+    /**
+     * Greeting setter.
+     */
+    public void setGreeting(String greeting){
+        this.greeting=greeting;
+    }
 }
