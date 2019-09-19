@@ -11,7 +11,7 @@
             fx:controller="helloworldwithtiers.view.FXMLDocumentController">
     <children>
         <Button layoutX="280" layoutY="200" text="Click Me!" 
-                onAction="#handleButtonAction" fx:id="button" />
+                fx:id="button" />
         <Label layoutX="66" layoutY="120" minHeight="16" minWidth="69" 
                fx:id="label" />
     </children>

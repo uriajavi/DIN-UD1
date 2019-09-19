@@ -41,11 +41,8 @@ public class JavaFXViewImplementation extends Application implements View {
                     ((FXMLDocumentController)loader.getController());
             //Set greeting to be used in JavaFX view controller
             viewController.setGreeting(greeting);
-            //Create scene an set document for it
-            Scene scene=new Scene(root);
-            //Set scene in stage and show it.
-            stage.setScene(scene);
-            stage.show();
+            viewController.setStage(stage);
+            viewController.initStage(root);
         }catch(Exception e){
             e.printStackTrace();
         }
