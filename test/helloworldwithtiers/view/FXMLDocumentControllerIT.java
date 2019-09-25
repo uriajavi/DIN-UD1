@@ -23,7 +23,8 @@ public class FXMLDocumentControllerIT extends ApplicationTest{
      * @param stage Primary Stage object
      * @throws Exception If there is any error
      */
-    @Override public void start(Stage stage) throws Exception {
+    @Override 
+    public void start(Stage stage) throws Exception {
        JavaFXViewImplementation myapp=
                new JavaFXViewImplementation();
        myapp.setGreeting(GREETING);
@@ -35,9 +36,13 @@ public class FXMLDocumentControllerIT extends ApplicationTest{
      * clicked
     */ 
     @Test
-    public void testButtonClick() {
-        clickOn("#button");
+    public void testLabelHasGreeting() {
         verifyThat("#label", hasText(GREETING));
     }
 
+    @Test
+    public void testButtonClick(){
+        clickOn("#button");
+        verifyThat("#label", hasText(GREETING+GREETING));
+    }
 }

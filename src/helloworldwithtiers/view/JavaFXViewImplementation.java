@@ -5,6 +5,7 @@
  */
 package helloworldwithtiers.view;
 
+import java.util.logging.Logger;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -18,6 +19,9 @@ import javafx.stage.Stage;
  * @author javi
  */
 public class JavaFXViewImplementation extends Application implements View {
+        private static final Logger LOGGER
+            =Logger.getLogger("helloworldwithtiers.view.JavaFXViewImplementation");
+
     /**
      * Private static member to store the greeting passed from the model to be
      * shown. It is static because calling to static launch() method creates a 
@@ -32,6 +36,7 @@ public class JavaFXViewImplementation extends Application implements View {
     @Override
     public void start(Stage stage) {
         try{
+            LOGGER.info("Starting JavaFX application.");
             //Load node graph from fxml file
             FXMLLoader loader=new FXMLLoader(
                     getClass().getResource("FXMLDocument.fxml"));
@@ -43,8 +48,9 @@ public class JavaFXViewImplementation extends Application implements View {
             viewController.setGreeting(greeting);
             viewController.setStage(stage);
             viewController.initStage(root);
+            LOGGER.info("Finished JavaFX application start.");
         }catch(Exception e){
-            e.printStackTrace();
+            LOGGER.severe(e.getMessage());
         }
     }
     /**
